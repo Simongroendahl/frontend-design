@@ -5,8 +5,85 @@
     --color-text-button: #FFF;
 
     /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
-    --hide-overlay: 0;
+    --hide-overlay: 1;
 }
 
 
 /* Begynd her... */
+
+body {
+    margin: auto;
+}
+
+h1 {
+    font-size: clamp(80px, 10vw, 100px);
+    color: var(--color-heading)
+}
+
+p {
+    /* font-family: ; */
+    font-size: 1rem;
+    line-height: 1.4;
+    max-width: 48ch;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    border-radius: 16px;
+    min-width: 140px;
+    height: auto;
+
+}
+
+.knap {
+    background-color: var(--color-bg-button);
+    color: var(--color-text-button);
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 16px 32px;
+
+}
+
+.content_container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    place-items: center;
+    padding: 16px;
+    max-width: 1100px;
+    gap: 40px;
+}
+
+.tekst_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.img_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+@media only screen and (max-width: 912px) {
+    .content_container {
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+    .img_container {
+        flex-direction: column;
+    }
+  }
+
+.col_2, .col_3 {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    min-width: 140px;
+}
