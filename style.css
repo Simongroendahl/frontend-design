@@ -6,24 +6,39 @@
     }
 }
 
-p {
+/*p {
     font-size: 1.25rem;
-}
+}*/
 
 /* =============================================
     Kort både uden billede og overskrift ændret
     p font size
 ============================================== */
 
-.card:has(img) p {
+/*.card:has(img) p {
     font-size: 1rem;
 }
 
 .content:has(h3) p {
     font-size: 1rem;
+} */
+
+/* =============================================
+    Bedre teknik
+============================================== */
+
+.card:not(:has(img, h3)) {
+    p{
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
 }
 
-
+.card:not(:has(img)) {
+    h3 {
+        font-size: 1.6rem;
+    }
+}
 
 /* =============================================
     Kort uden billeder øget overskrift
@@ -38,12 +53,24 @@ p {
     med content padding.
 ============================================== */
 
-.card:has(img) {
+/*.card:has(img) {
     padding: 0;
 }
 
 .card:has(img) .content {
     padding: 1rem;
+}*/
+
+/* =============================================
+    Bedre teknik
+============================================== */
+
+.card:has(img) {
+    padding: 0;
+
+    .content {
+        padding: 1rem;
+    }
 }
 
 
