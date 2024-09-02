@@ -1,9 +1,12 @@
 .break-out-card {
     inline-size: min(650px, 100% - 2rem);
-    display: block grid;
+    display: grid;
     grid-template-columns: auto auto;
     gap: 0 1em;
 }
+
+/* Content class'en nedarver breat-out-card'ets kolonner ved brug af subgrid.
+   Det fastsættes i række 2, første kolonne, og slutter også i række 2 */
 
 .content {
     padding: 1.5em;
@@ -11,7 +14,23 @@
     background: #fff;
     box-shadow: 0px 15px 35px 0px rgba(13, 23, 38, 0.07);
     border-inline-start: 7px solid #4f48ed;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-area: 2 / 1 / 2 / -1;
 }
+
+/* Her placeres alle "børne"-elementerne i griddets første kolonne */
+
+.content > * {
+    grid-column: 1;
+  }
+
+  /* Img-elementet stilles på række 1, kolonne 2, og spænder over to rækker */
+
+  img {
+    grid-area: 1 / 2 / span 2;
+  }
+
 
 .tag {
     padding-block: .25em;
