@@ -9,10 +9,25 @@ ul {
     gap: 1rlh;
     padding-block: 1rlh;
 
+    :has(> &) {
+        container-type: inline-size;
+    }
+
+    @container (width > 700px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    ul li:first-child {
+        grid-column: span 2;
+    }
+
     /* Tilføj container regel, når width > 700px */
+
     /* - Indstil 2 kolonner */
     /* - Sæt det første barn til `grid-column: span 2` */
 }
+
+
 
 article {
     display: grid;
@@ -21,6 +36,7 @@ article {
     background: #cceeff;
     border: 1px solid #99ddff;
     font-size: clamp(1rem, 3cqw, 1.25rem);
+    container-type: inline-size;
 
     aside & {
         background: #ffdbff;
@@ -35,6 +51,26 @@ article {
     p+p {
         margin-top: .4lh;
     }
+
+    :has(> &) {
+        container-type: inline-size;
+    }
+
+    :nth-last-child(odd):first-child:has(> &) {
+        grid-column: 1 / -1;
+    }
+
+    @container (width > 500px) {
+
+        grid-template-columns: 1fr 1fr;
+
+        :nth-child(even) > & img {
+            order: 1;
+        }
+
+    }
+
+
 
 
     /* Tilføj container regel når width > 500px */
