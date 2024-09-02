@@ -25,7 +25,7 @@ section {
     }
 
     figure {
-        display: inherit;
+        display: grid;
         grid-template: subgrid / subgrid;
         grid-area: row1-start / col1-start / span 2 / -2;
     }
