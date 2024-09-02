@@ -1,2 +1,29 @@
 /* Dine styles her */
-article {}
+:root {
+    --flow-space: var(--space-1);
+    --space-1: .5rlh;
+    --space-2: 2rlh;
+    --space-3: 1rlh;
+    --space-4: .25rlh;
+}
+article > * + * {
+    margin-block-start: var(--flow-space, 1em);
+}
+
+article :is(h2) {
+        --flow-space: var(--space-2);
+        margin-block-start: var(--flow-space);
+    }
+    & :is(h3){
+        --flow-space: var(--space-3);
+        margin-block-start: var(--flow-space);
+    }
+
+article :is(h3 + *) {
+    --flow-space: var(--space-4);
+        margin-block-start: var(--flow-space);
+}
+
+
+
+
