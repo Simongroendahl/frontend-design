@@ -1,4 +1,35 @@
-article {
+/*article {
     max-width: 65ch;
     margin-inline: auto;
-}
+}*/
+
+article {
+    display: grid;
+    grid-template-columns:
+    [full-bleed-start] 2fr
+    [feature-start] 1fr
+    [content-start] min(65ch, 100%)
+    [content-end] 1fr
+    [feature-end] 2fr
+    [full-bleed-end];
+
+    > * {
+        grid-column: 3;
+    }
+
+    & img {
+        width: 100vw;
+        grid-column: full-bleed-start / full-bleed-end;
+    }
+
+    & blockquote {
+        grid-column: feature-start / feature-end;
+    }
+  }
+
+
+
+
+
+
+
